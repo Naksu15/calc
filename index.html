@@ -1,0 +1,365 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>My Journey Through Calculus | 2CALC-IT E-Portfolio</title>
+        <style>
+            :root {
+                --bg: #f7f8fa;
+                --card: #fff;
+                --text: #1f2933;
+                --muted: #5b6673;
+                --accent: #1f4e8c;
+                --line: #dde2e8;
+                box-sizing: border-box;
+                padding-top: env(safe-area-inset-top, 0px);
+                padding-bottom: env(safe-area-inset-bottom, 0px);
+            }
+
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) {
+                    --bg: #14181d;
+                    --card: #1d232a;
+                    --text: #e8ecf0;
+                    --muted: #9aa5b1;
+                    --accent: #6ea8f0;
+                    --line: #2f3841;
+                }
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }   
+            .portfolio-img {
+                width: 100%;
+                max-width: 400px; /* Adjust this number to whatever size looks best to you */
+                height: auto;
+                border-radius: 8px; /* Optional: rounds the corners slightly for a cleaner look */
+                margin: 15px 0; /* Adds spacing above and below the image */
+            }
+
+            :root[data-theme="dark"] {
+                --bg: #14181d;
+                --card: #1d232a;
+                --text: #e8ecf0;
+                --muted: #9aa5b1;
+                --accent: #6ea8f0;
+                --line: #2f3841;
+            }
+            .reflection {
+                margin: 14px 0 0;
+                color: var(--muted);
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: calc(60px + env(safe-area-inset-top, 0px));
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--text);
+                font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            }
+
+            nav {
+                position: sticky;
+                top: env(safe-area-inset-top, 0px);
+                background: var(--card);
+                border-bottom: 1px solid var(--line);
+                display: flex;
+                gap: 4px;
+                overflow-x: auto;
+                padding: 8px 12px;
+                z-index: 5;
+            }
+
+            nav a {
+                color: var(--text);
+                text-decoration: none;
+                padding: 6px 12px;
+                border-radius: 6px;
+                white-space: nowrap;
+                font-size: 14px;
+            }
+
+            nav a:hover {
+                background: var(--bg);
+                color: var(--accent);
+            }
+
+            header {
+                background: var(--accent);
+                color: #fff;
+                text-align: center;
+                padding: 56px 20px;
+            }
+
+            header h1 {
+                margin: 0 0 8px;
+                font-size: clamp(26px, 5vw, 40px);
+            }
+
+            header p {
+                margin: 4px 0;
+                opacity: .95;
+            }
+
+            main {
+                max-width: 860px;
+                margin: 0 auto;
+                padding: 8px 16px 48px;
+            }
+
+            section {
+                margin-top: 40px;
+            }
+
+            h2 {
+                color: var(--accent);
+                border-bottom: 2px solid var(--line);
+                padding-bottom: 6px;
+            }
+
+            .card {
+                background: var(--card);
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                padding: 16px 18px;
+                margin: 14px 0;
+            }
+
+            .card h3 {
+                margin: 0 0 4px;
+            }
+
+            .tag {
+                display: inline-block;
+                font-size: 12px;
+                background: var(--bg);
+                border: 1px solid var(--line);
+                border-radius: 99px;
+                padding: 1px 10px;
+                color: var(--muted);
+            }
+
+            .slot {
+                border: 2px dashed var(--line);
+                border-radius: 6px;
+                padding: 18px;
+                text-align: center;
+                color: var(--muted);
+                margin: 10px 0;
+                font-size: 14px;
+            }
+
+            .note {
+                color: var(--muted);
+                font-size: 14px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 14px;
+            }
+
+            footer {
+                text-align: center;
+                color: var(--muted);
+                font-size: 13px;
+                padding: 24px;
+            }
+
+            .topic-picture {
+                width: 100%;
+                max-width: 100%;
+                max-height: 520px;
+                height: auto;
+                object-fit: contain;
+                display: block;
+                border-radius: 8px;
+                margin-top: 12px;
+                background: var(--bg);
+            }
+
+            video.topic-picture {
+                min-height: 220px;
+            }
+
+            @media (max-width: 600px) {
+                header {
+                    padding: 42px 16px;
+                }
+
+                main {
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
+
+                .card {
+                    padding: 14px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#journey">Calculus Journey</a>
+            <a href="#it">Calculus in IT</a>
+            <a href="#final">Final Reflection</a>
+        </nav>
+
+        <header id="home">
+            <h1>E-Portfolio Calculus</h1>
+            <p><strong>Ryan Miguel O. Reyes</strong></p>
+            <p> WD-202 &nbsp;•&nbsp; Subject: CALCULUS</p>
+            <p>Instructor: Mr. Jonathan Santos Mallari &nbsp;•&nbsp; 2nd Semester</p>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="card">
+                    <p class="note"></p>
+                    <p>My name is Ryan Miguel Reyes, and I am currently pursuing a degree in Web Development. My primary career interests lie at the intersection of software engineering and Web Development, where I hope to build scalable, user-centric applications that solve real-world problems.</p>
+                </div>
+            </section>
+
+                        <section id="journey">
+                <h2>Activities &amp; Projects</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>INFOMERCIAL</h3>
+                        <span class="tag">Performance Task</span>
+                        <video class="topic-picture" controls>
+                            <source src="images/calculusInfographic.mp4" type="video/mp4">
+                            <p class="reflection">
+    <strong>Reflection:</strong> Making the video was different from the usual written activities because I had to think about how to communicate a Calculus idea instead of simply solving a problem. I had to consider how to present the information in a way that someone else could follow. This activity helped me practice explaining what I understood, and it made me appreciate how important communication can be when working with technical subjects.
+</p>    
+                        </video>
+                    </div>
+
+                    <div class="card">
+                        <h3>ACTIVITY #1</h3>
+                        <span class="tag">Activity</span>
+                        <img class="topic-picture" src="images/ACT1.jpg" alt="Activity 1">
+                        <p class="reflection">
+    <strong>Reflection:</strong> This activity was a good introduction to Calculus because it showed me that functions can be combined in different ways depending on what the problem asks. I found the operations manageable once I understood what each one was doing. The composition part especially made me pay attention to which function should be substituted first. It was a simple activity, but it helped me become more comfortable working with functions before moving on to harder topics.
+</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>POSTER</h3>
+                        <span class="tag">Project</span>
+                        <img class="topic-picture" src="images/CALC_POSTER.png" alt="Calculus poster">
+                    </div>
+
+                    <div class="card">
+                        <h3>ACTIVITY #2</h3>
+                        <span class="tag">Activity</span>
+                        <img class="topic-picture" src="images/ACT2.jpg" alt="Activity 2">
+                        <p class="reflection">
+    <strong>Reflection:</strong> This activity showed me that limits can require more than simply substituting a value into a function. I had to recognize when direct substitution was enough and when I needed another technique such as factoring or rationalizing. At first, the different methods made the problems feel confusing, but working through them helped me see that each method has a purpose. This activity made me realize that understanding the form of a problem is an important part of solving it.
+</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>ACTIVITY CARDS</h3>     
+                        <span class="tag">Activity</span>
+                        <img class="topic-picture" src="images/ACTCARD.jpg" alt="Activity cards">
+                        <p class="reflection">
+    <strong>Reflection:</strong> The activity cards gave me a different way to review the topics we had discussed instead of just looking back at my notes. Having the information separated into smaller parts made it easier to focus on one concept at a time. It also showed me that studying does not always have to involve doing long problems; sometimes, reviewing the important ideas consistently can be just as useful.
+</p>    
+                    </div>
+
+                    <div class="card">
+                        <h3>PRELIMS</h3>
+                        <span class="tag">Major Exam</span>
+                        <img class="topic-picture" src="images/PRELIMS.jpg" alt="Prelims">
+                        <p class="reflection">
+    <strong>Reflection:</strong> The preliminary examination was a useful test of how well I could apply the concepts from the first part of the course. Limits seemed much easier when I had enough time to think, but working under exam conditions made me realize how important it is to stay organized. I learned that rushing can make a problem more complicated than it actually is. This exam encouraged me to become more confident with my first approach while still taking enough time to verify my work.
+</p>    
+                    </div>
+
+                    <div class="card">
+                        <h3>ACTIVITY #4</h3>
+                        <span class="tag">Activity</span>
+                        <img class="topic-picture" src="images/ACT4.jpg" alt="Activity 4">
+                        <p class="reflection">
+    <strong>Reflection:</strong> Basic differentiation was one of the activities where I started to feel more comfortable with Calculus. The rules were straightforward once I understood the pattern behind them, especially the power rule and how it applies to different terms. Getting through the problems successfully gave me more confidence in my ability to recognize what rule a function needed. It also showed me how much easier solving becomes when the fundamentals are already familiar.
+</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>ACTIVITY #5</h3>
+                        <span class="tag">Activity</span>
+                        <img class="topic-picture" src="images/ACT5.jpg" alt="Activity 5">
+                        <p class="reflection">
+    <strong>Reflection:</strong> This activity challenged me to be more organized because the problems involved several steps and different differentiation rules. Rewriting fractional exponents and identifying the parts of a product or quotient helped me avoid treating every problem the same way. I learned that setting up the problem correctly is already a big part of getting the answer right. This activity strengthened my confidence in handling more complicated derivatives.
+</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>ACTIVITY #6</h3>
+                        <span class="tag">Activity</span>
+                        <img class="topic-picture" src="images/ACT6.jpg" alt="Activity 6">
+                        <p class="reflection">
+    <strong>Reflection:</strong> The Chain Rule helped me understand how differentiation works when one function is placed inside another. Instead of seeing the longer expressions as intimidating, I learned to separate them into smaller parts and work through them one step at a time. Higher-order derivatives also showed me that the same basic process can be repeated to continue analyzing a function. This activity made differentiation feel more structured and predictable to me.
+</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>MIDTERMS</h3>
+                        <span class="tag">Major Exam</span>
+                        <img class="topic-picture" src="images/MIDTERMS.jpg" alt="Midterms">
+                        <p class="reflection">
+    <strong>Reflection:</strong> The midterm made me realize that understanding a topic during class does not always mean I am fully prepared to solve it independently later. The exam covered several differentiation concepts, so I had to remember not only the formulas but also which rule matched each type of problem. It showed me that I needed to spend more time reviewing and practicing outside of class. Even though the result was not what I wanted, it gave me a clearer idea of what I needed to improve for the rest of the course.
+</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="it">
+                <h2>Calculus in IT &amp; Web Development</h2>
+                <div class="card">
+                    <h3>Rate of Change</h3>
+                    <p>Rate of change tells us how quickly something changes over time. In IT and web development, it can be used to understand things like website traffic, download speeds, or how quickly data is being processed. For example, developers can analyze how quickly the number of website visitors increases to determine whether a website needs better server performance.</p>
+                </div>
+                <div class="card">
+                    <h3>Derivatives</h3>
+                    <p>Derivatives help us determine how one value changes when another value changes. In technology, derivatives can be used in areas such as machine learning, computer graphics, and performance analysis. For example, machine learning algorithms use derivatives to adjust a model and reduce errors, helping the system learn and make better predictions.</p>
+                </div>
+                <div class="card">
+                    <h3>Optimization</h3>
+                    <p>Optimization involves finding the best solution to a problem, often by minimizing or maximizing a function. In IT and web development, optimization is crucial for improving performance, reducing resource consumption, and enhancing user experience. For example, developers might optimize algorithms to run faster or reduce the load on a server.</p>
+                </div>
+            </section>
+
+            <section id="final">
+                <h2>Final Reflection</h2>
+                <div class="card">
+                    <p>When I first started 2CALC-IT, I thought Calculus would mainly be about remembering formulas and following procedures. As the semester went on, I realized that understanding the process was more important than simply memorizing an equation. Each lesson required me to slow down, identify what the problem was asking, and work through it step by step. That way of thinking became one of the most valuable things I learned from the course.</p>
+                    <p>One of the things I found challenging was solving problems that required several steps before reaching the final answer. It was easy to make a small mistake in one part of the solution and have it affect everything that came after. Because of this, I learned to pay more attention to my work instead of immediately moving on after getting an answer. Checking my calculations and reviewing each step helped me become more careful and confident when solving problems.</p>
+                    <p>The concepts I understood best were derivatives, rate of change, and optimization. I found derivatives especially interesting because they explain how one quantity changes in relation to another. Once I understood the basic idea, I started seeing how it could be connected to technology and Web Development. For example, changes in website traffic, system performance, animations, and data can all be analyzed using ideas related to change and measurement. </p>
+                    <p>By the end of the semester, my view of Calculus had changed. It no longer felt like a subject that was separate from my Web Development studies. I began to understand that mathematical ideas such as change, derivatives, and optimization can have practical connections to technology. Calculus also taught me patience, attention to detail, and a more organized way of approaching difficult problems.</p>
+                    <p>There are still areas where I need to improve, especially my speed and accuracy when solving more complicated problems. However, I am leaving this course with a better understanding of how to approach challenges instead of simply looking for the quickest answer. The biggest lesson I will take from 2CALC-IT is that difficult problems become easier when I understand their structure, break them into smaller parts, and work through them carefully.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>2CALC-IT E-Portfolio • Ryan Miguel O. Reyes</footer>                    
+    </body>                         
+</html>
